@@ -12,7 +12,7 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <Badge variant="secondary" className="text-sm font-medium">
-                👋 Merhaba, Ben Berkay
+                💼 Profesyonel Yazılım Geliştirici
               </Badge>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
                 Dijital Dünyada
@@ -22,9 +22,8 @@ const Hero = () => {
                 Geliştiriyorum
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Profesyonel bir yazılım geliştirici ve dijital uzman olarak, modern teknolojilerle 
-                iş dünyasına değer katan projeler üretiyorum. Kullanıcı deneyimini ön planda tutan, 
-                ölçeklenebilir ve sürdürülebilir çözümler geliştirmeyi hedefliyorum.
+                Web uygulamaları ve dijital çözümler geliştiren deneyimli yazılım uzmanı. 
+                Modern teknolojilerle kurumsal projelerde kaliteli ve sürdürülebilir sonuçlar üretiyorum. 🚀
               </p>
               
               {/* Stats */}

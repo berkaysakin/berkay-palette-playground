@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import BerkayIcon from "./BerkayIcon";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { href: "#about", label: "Hakkımda" },
-    { href: "#skills", label: "Yetenekler" },
-    { href: "#services", label: "Hizmetler" },
-    { href: "#blog", label: "Blog" },
+    { href: "#overview", label: "Genel Bakış" },
     { href: "#contact", label: "İletişim" },
   ];
 
@@ -18,7 +16,8 @@ const Navigation = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 flex items-center space-x-3">
+            <BerkayIcon className="h-10 w-10" />
             <h1 className="font-heading font-bold text-xl text-primary">Berkay</h1>
           </div>
 

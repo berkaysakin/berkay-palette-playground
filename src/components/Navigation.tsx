@@ -9,6 +9,7 @@ const Navigation = () => {
     { href: "#about", label: "Hakkımda" },
     { href: "#skills", label: "Yetenekler" },
     { href: "#services", label: "Hizmetler" },
+    { href: "#blog", label: "Blog" },
     { href: "#contact", label: "İletişim" },
   ];
 

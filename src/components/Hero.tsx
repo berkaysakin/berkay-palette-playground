@@ -26,6 +26,22 @@ const Hero = () => {
                 iş dünyasına değer katan projeler üretiyorum. Kullanıcı deneyimini ön planda tutan, 
                 ölçeklenebilir ve sürdürülebilir çözümler geliştirmeyi hedefliyorum.
               </p>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 py-6 max-w-md">
+                <div className="text-center">
+                  <div className="text-2xl font-heading font-bold text-foreground">50+</div>
+                  <div className="text-sm text-muted-foreground">Proje</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-heading font-bold text-foreground">3+</div>
+                  <div className="text-sm text-muted-foreground">Yıl Deneyim</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-heading font-bold text-foreground">100%</div>
+                  <div className="text-sm text-muted-foreground">Memnuniyet</div>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}

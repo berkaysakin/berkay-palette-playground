@@ -2,13 +2,21 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import BerkayIcon from "./BerkayIcon";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
   const menuItems = [
-    { href: "#overview", label: "Genel Bakış" },
-    { href: "#contact", label: "İletişim" },
+    { href: "/", label: "Genel Bakış" },
+    { href: "/blog", label: "Blog" },
   ];
 
   return (
@@ -17,7 +25,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center space-x-3">
-            <BerkayIcon className="h-10 w-10" />
+            <img src="/assets/images/bs.webp" className="h-10 w-100 object-cover" />
             <h1 className="font-heading font-bold text-xl text-primary">Berkay</h1>
           </div>
 
@@ -33,7 +41,12 @@ const Navigation = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="default" size="sm" className="bg-gradient-primary border-0">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="bg-gradient-primary border-0"
+                onClick={scrollToBottom}
+              >
                 İletişime Geç
               </Button>
             </div>
@@ -66,7 +79,15 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button variant="default" size="sm" className="w-full bg-gradient-primary border-0">
+                <Button 
+                  variant="default" 
+                  size="sm" 
+                  className="w-full bg-gradient-primary border-0"
+                  onClick={() => {
+                    scrollToBottom();
+                    setIsOpen(false);
+                  }}
+                >
                   İletişime Geç
                 </Button>
               </div>

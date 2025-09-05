@@ -1,9 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
-import heroImage from "@/assets/berkay-portrait.jpg";
+import { ArrowDown, Github, Instagram, Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToCTA = () => {
+    const ctaSection = document.getElementById('cta-section');
+    if (ctaSection) {
+      ctaSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-hero pt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -12,56 +26,48 @@ const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
               <Badge variant="secondary" className="text-sm font-medium">
-                💼 Profesyonel Yazılım Geliştirici
+                🎓 Eğitim Danışmanı & Girişimci
               </Badge>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
-                Dijital Dünyada
+              <h1 className="text-4xl pt-3 sm:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-tight">
+                Sürekli Öğrenme
                 <span className="block bg-gradient-primary bg-clip-text text-transparent">
-                  İnovatif Çözümler
+                  Sürekli Gelişim
                 </span>
-                Geliştiriyorum
               </h1>
-              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Web uygulamaları ve dijital çözümler geliştiren deneyimli yazılım uzmanı. 
-                Modern teknolojilerle kurumsal projelerde kaliteli ve sürdürülebilir sonuçlar üretiyorum. 🚀
+              <p className="text-lg pt-5 pb-5 text-muted-foreground leading-relaxed max-w-lg">
+                İnsanlara ilham veren eğitim çözümleri ve girişimcilik vizyonumla, öğrenme sürecini daha verimli, ulaşılabilir ve geleceğe odaklı hale getiriyorum
               </p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 py-6 max-w-md">
-                <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-foreground">50+</div>
-                  <div className="text-sm text-muted-foreground">Proje</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-foreground">3+</div>
-                  <div className="text-sm text-muted-foreground">Yıl Deneyim</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-heading font-bold text-foreground">100%</div>
-                  <div className="text-sm text-muted-foreground">Memnuniyet</div>
-                </div>
-              </div>
+
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-gradient-primary border-0 text-lg px-8 py-6">
-                Projelerimi İncele
+            <div className="flex flex-col sm:flex-row gap-4 pb-2">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary border-0 text-lg px-8 py-6"
+                onClick={scrollToCTA}
+              >
+                Kitabımı Keşfet
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-                Benimle İletişime Geç
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="text-lg px-8 py-6"
+                onClick={scrollToBottom}
+              >
+                İletişime Geç
               </Button>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github className="h-6 w-6" />
+              <a href="https://www.instagram.com/berkaysakinn" className="text-muted-foreground hover:text-primary transition-colors" title="Instagram profilim">
+                <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/berkaysakin" className="text-muted-foreground hover:text-primary transition-colors" title="LinkedIn profilim">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:berkaysakin500@gmail.com" className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1" title="E-posta gönder: berkaysakin500@gmail.com">
                 <Mail className="h-6 w-6" />
               </a>
             </div>
@@ -72,14 +78,11 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 rounded-full overflow-hidden shadow-hover animate-float">
                 <img
-                  src={heroImage}
-                  alt="Berkay - Dijital Uzman"
+                  src="/assets/images/brkyskn.jpg"
+                  alt="Berkay - Eğitim Danışmanı"
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-primary rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-accent rounded-full opacity-30 animate-float"></div>
             </div>
           </div>
         </div>
